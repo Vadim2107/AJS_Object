@@ -1,1 +1,1 @@
-# AJS_Object
+# Домашнее задание к лекции «Object, Reflection и Proxy»
