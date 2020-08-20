@@ -1,3 +1,5 @@
+/* eslint-disable object-curly-newline */
+/* eslint-disable arrow-body-style */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable guard-for-in */
@@ -38,16 +40,11 @@ const orderByProps = (obj, arr) => {
   return propsArr;
 };
 
-const showAttacks = (obj) => {
-  const arrAttacks = obj.special;
-  for (let i = 0; i < arrAttacks.length; i++) {
-    arrAttacks.forEach((item) => {
-      if (item.description === undefined) {
-        item.description = 'Описание недоступно';
-      }
-    });
-  }
-  return arrAttacks;
+const showAttacks = ({ special }) => {
+  return special.map((item) => {
+    const { id, name, icon, description = 'Описание недоступно' } = item;
+    return { id, name, icon, description };
+  });
 };
 
 export { orderByProps, showAttacks };
